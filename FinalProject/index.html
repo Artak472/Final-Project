@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <meta charset="utf8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <style>
+            canvas {
+                display: block;
+                margin: 0 auto;
+            }
+
+            div {
+                display: inline-block;
+            }
+
+            h1 {
+                padding: 20px;
+                text-align: center;
+            }
+
+            body {
+                font-family: 'Noto Sans', sans-serif !important;
+            }
+        </style>
+    </head>
+
+    <body>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <h1>Ծրագրավորում III Ստեփանակերտ</h1>
+                </tr>
+                <tr>
+                    <h1>Արտակ Ենգիբարյան</h1>
+                </tr>
+                <tr>
+                    <td>Եղանակ</td>
+                    <td id="weather"></td>
+                </tr>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Գույն</th>
+                    <th scope="col">Նկարագրություն</th>
+                    <th scope="col">Ծնվել է</th>
+                    <th scope="col">Այս պահին կա</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td scope="row" style="background-color:green;"></td>
+                    <td>Կանաչը խոտն է, որը բազմանում է N ցիկլը մեկ,մահանում է երբ նրան ուտում է խոտակերը:</td>
+                    <td id="grassCount"></td>
+                    <td id="grassLiveCount"></td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td scope="row" style="background-color:yellow;"></td>
+                    <td>Դեղինը խոտակերն է, որը բազմանում է N հատ խոտ ուտելուց հետո և մահանում է N հատ չուտելուց հետո, կամ
+                        երբ նրան ուտում է գիշատիչը կամ մարդը:</td>
+                    <td id="grassEaterCount"></td>
+                    <td id="grassEaterLiveCount"></td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td scope="row" style="background-color:red;"></td>
+                    <td>Կարմիրը գիշատիչն է, որը բազմանում է N հատ խոտակեր ուտելուց հետո և մահանում է N հատ չուտելուց հետո, կամ
+                        երբ նրան ուտում է մարդը:</td>
+                    <td id="predCount"></td>
+                    <td id="predLiveCount"></td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td scope="row" style="background-color:purple;"></td>
+                    <td>Մանուշակագույնը մարդն է, որը բազմանում է N հատ գիշատիչ ուտելուց հետո և մահանում է N հատ չուտելուց հետո, նա կարող է շարժվել և ուտել ավելի մեծ հեռավորությունից:</td>
+                    <td id="peopleCount"></td>
+                    <td id="peopleLiveCount"></td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td scope="row" style="background-color: #ff00b0;"></td>
+                    <td>Վարդագույնը օձն է, որը ուտում է խոտակեր, չի բազմանում, տեղաշարժվում է իր հետևից սև հետք թողելով, մահանում է N քայլ անելուց հետո, կամ երբ նրան ուտում է գիշատիչը կամ մարդը:</td>
+                    <td id="snakeCount"></td>
+                    <td id="snakeLiveCount"></td>
+                </tr>
+                <tr>
+                    <th scope="row">6</th>
+                    <td scope="row" style="background-color: #5c2506;"></td>
+                    <td>Շագանակագույնը ընկերասերն է, որը բազմանում է իր իգական սեռին հանդիպելուց և մահանում է N քայլից:</td>
+                    <td id="peacCount"></td>
+                    <td id="peacLiveCount"></td>
+                </tr>
+                <tr>
+                    <th scope="row">7</th>
+                    <td scope="row" style="background-color: #89380a;"></td>
+                    <td>Բաց շագանակագույնը ընկերասերնի իգական սեռն է, որը չի մահանում:</td>
+                    <td id="peacFCount"></td>
+                    <td id="peacFLiveCount"></td>
+                </tr>
+            </tbody>
+        </table>
+        <script src="p5.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
